@@ -8,7 +8,7 @@ const useDebounce = (callback, delay) => {
     callbackRef.current = callback;
   }, [callback]);
 
-  const a = useMemo(() => {
+  const debounce = useMemo(() => {
     return (...args) => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
@@ -19,7 +19,7 @@ const useDebounce = (callback, delay) => {
     };
   }, [delay]);
   
-  return a;
+  return debounce;
 };
 
 export default useDebounce;

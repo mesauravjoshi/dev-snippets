@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import './App.css'
 import GenerateURL from './pages/GenerateURL';
-import Debounce from './pages/Debounce';
+import Debounce from '@/pages/Debounce';
 import Throt from './pages/Throt';
 import Login from './pages/Login';
 import Redux from './pages/Redux';
@@ -25,7 +25,7 @@ function App() {
         </Route>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/GenerateURL' element={<GenerateURL />} />
+        <Route path='/generateURL' element={<GenerateURL />} />
         <Route path='/debounce' element={<Debounce />} />
         <Route path='/redux' element={<Redux />} />
         <Route path='/throt' element={<Throt />} />
@@ -51,12 +51,14 @@ const Home = () => {
     { id: 2, name: 'Smart User List', route: '/smartUserList' },
     { id: 3, name: 'Mini Post man', route: '/miniPostman' },
     { id: 4, name: 'Debounce', route: '/debounce' },
+    { id: 'throt', name: 'Throtling', route: '/throt' },
+    { id: 'redux', name: 'Redux', route: '/redux' },
+    { id: 'tanstack', name: 'Tanstack', route: '/tanstack' },
   ];
 
   return (
     <div>
       <h1 className='text-3xl'>
-        SERVER IS LIVE
         <p className='text-2xl'>
           <Link to={'/laxyloading'}>
             Laxy load
@@ -98,10 +100,12 @@ const Home = () => {
                       <td className="px-6 py-4 text-sm font-medium border-r border-zinc-200">
                         {fruit.name}
                       </td>
-                      <td className="px-6 py-4 text-sm text-blue-700 border-r border-zinc-200 cursor-pointer">
-                        <Link to={fruit.route}>
-                          {fruit.route}
-                        </Link>
+                      <td className="px-6 py-4 text-sm text-sky-600 border-r border-zinc-200">
+                        <span className='cursor-pointer'>
+                          <Link to={fruit.route}>
+                            {fruit.route}
+                          </Link>
+                        </span>
                       </td>
                     </tr>
                   ))}
