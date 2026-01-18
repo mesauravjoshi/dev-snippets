@@ -11,6 +11,7 @@ import MiniPostman from './pages/MiniPostman';
 import ShoppingCart from './pages/ShoppingCart';
 import Kanban from './pages/Kanban';
 import InfiniteScrolling from './pages/InfiniteScrolling';
+import Pagination from '@/pages/Pagination';
 // import LazyLoading from './pages/LazyLoading';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -36,6 +37,7 @@ function App() {
         <Route path='/shopping-cart' element={<ShoppingCart />} />
         <Route path='/kanban' element={<Kanban />} />
         <Route path='/infiniteScrolling' element={<InfiniteScrolling />} />
+        <Route path='/pagination' element={<Pagination />} />
       </Routes>
     </>
   )
@@ -54,6 +56,7 @@ const Home = () => {
     { id: 'throt', name: 'Throtling', route: '/throt' },
     { id: 'redux', name: 'Redux', route: '/redux' },
     { id: 'tanstack', name: 'Tanstack', route: '/tanstack' },
+    { id: 'Pagination', name: 'Pagination', route: '/pagination' },
   ];
 
   return (

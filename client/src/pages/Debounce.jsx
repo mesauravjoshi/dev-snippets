@@ -15,6 +15,15 @@ const Debounce = () => {
     debouncedCallApi(e);
   };
 
+  // const debounce = (func, wait) => {
+  //   let timeId
+  //   return (...args) => {
+  //     clearInterval(timeId)
+  //     timeId = setTimeout(() => {
+  //       func(...args)
+  //     }, [wait])
+  //   }
+  // }
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#1C1C1C] px-4">
       <div className="w-full max-w-md bg-[#1C1C1C] border border-[#2A2A2A] rounded-xl p-6 shadow-lg">

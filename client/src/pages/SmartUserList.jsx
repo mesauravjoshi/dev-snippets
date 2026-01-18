@@ -23,10 +23,11 @@ const SmartUserList = () => {
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        // body: JSON.stringify(data)
+        body: JSON.stringify()
       })
       let result = await res.json();
       const users = result.map((user) => ({ ...user, status: 'active' }))
+      
       localStorage.setItem('users_data', JSON.stringify(users))
       setAllUser(users);
       setLoading(false);

@@ -63,16 +63,7 @@ export default function BasicTable() {
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="
-                        px-4
-                        py-3
-                        text-left
-                        text-sm
-                        font-semibold
-                        text-[#DAA520]
-                        border-b
-                        border-[#3A3A3A]
-                      "
+                      className="px-4py-3text-lefttext-smfont-semiboldtext-[#DAA520]border-bborder-[#3A3A3A]"
                     >
                       {flexRender(
                         header.column.columnDef.header,
@@ -93,12 +84,7 @@ export default function BasicTable() {
                   {row.getVisibleCells().map((cell) => (
                     <td
                       key={cell.id}
-                      className="
-                        px-4
-                        py-3
-                        text-sm
-                        text-[#F5E8D8]
-                      "
+                      className="px-4 py-3 text-sm text-[#F5E8D8]"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
@@ -117,17 +103,11 @@ export default function BasicTable() {
           <button
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            className={`
-              px-4
-              py-2
-              rounded-lg
-              border
-              text-sm
+            className={`px-4 py-2 rounded-lg border text-sm
               ${table.getCanPreviousPage()
                 ? "border-[#3A3A3A] text-[#F5E8D8] bg-[#262626]"
                 : "border-[#2A2A2A] text-[#6B6B6B] bg-[#1C1C1C] cursor-not-allowed"
-              }
-            `}
+              }`}
           >
             Previous
           </button>
@@ -135,12 +115,7 @@ export default function BasicTable() {
           <button
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            className={`
-              px-4
-              py-2
-              rounded-lg
-              border
-              text-sm
+            className={`px-4 py-2 rounded-lg border text-sm
               ${table.getCanNextPage()
                 ? "border-[#3A3A3A] text-[#F5E8D8] bg-[#262626]"
                 : "border-[#2A2A2A] text-[#6B6B6B] bg-[#1C1C1C] cursor-not-allowed"
