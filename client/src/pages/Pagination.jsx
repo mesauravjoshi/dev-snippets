@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const Pagination = () => {
   const [data, setData] = useState([]);
   const [pageLimit, setPageLimit] = useState(25);
   const [skip, setSkip] = useState(0);
 
-  const fetchData = async (skip) => {
+  const fetchData = useCallback(async (skip) => {
+    console.log('Rendering function');
     if (skip > 25) return;
     const res = await fetch(`https://dummyjson.com/products?limit=5&skip=${skip}`, {
       method: 'GET',
@@ -16,8 +17,8 @@ const Pagination = () => {
     const data = await res.json();
     // console.log(data.products);
     setData(data.products)
-  }
-  
+  }, [])
+
   useEffect(() => {
     fetchData(skip);
   }, [skip])
@@ -92,8 +93,10 @@ const Pagination = () => {
             </button>
             <button
               className='px-4 py-2 rounded-lg border text-sm border-[#3A3A3A] text-[#F5E8D8] bg-[#262626]'
+              onClick={() => { setPageLimit(prev => prev + 1) }}
             >
-              {skip+5}
+              {/* {skip + 5} */}
+              JOSHI {pageLimit}
             </button>
 
             <button
