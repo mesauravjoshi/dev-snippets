@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 import './App.css'
 import GenerateURL from './pages/GenerateURL';
-import Debounce from '@/pages/Debounce';
-import Throt from './pages/Throt';
+import Debounce from '@/pages/javascript/Debounce';
+import Throt from '@/pages/javascript/Throt';
 import Login from './pages/Login';
 import Redux from './pages/Redux';
 import Tanstack from './pages/Tanstack';
