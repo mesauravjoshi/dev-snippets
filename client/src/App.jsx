@@ -12,6 +12,7 @@ import ShoppingCart from './pages/ShoppingCart';
 import Kanban from './pages/Kanban';
 import InfiniteScrolling from './pages/InfiniteScrolling';
 import Pagination from '@/pages/Pagination';
+import Index from './pages/index';
 // import LazyLoading from './pages/LazyLoading';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='login' element={<Login />} />
         </Route>
         <Route path='/' element={<Home />} />
+        <Route path='/Index' element={<Index />} />
         <Route path='/home' element={<Home />} />
         <Route path='/generateURL' element={<GenerateURL />} />
         <Route path='/debounce' element={<Debounce />} />

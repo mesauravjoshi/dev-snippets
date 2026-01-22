@@ -1,0 +1,21 @@
+.hero-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.bg-javascript {
+  background: #facc15; /* yellow */
+}
+
+.bg-react {
+  background: #22d3ee; /* cyan */
+}
+
+.bg-project {
+  background: #a855f7; /* purple */
+}
