@@ -1,22 +1,22 @@
 import { lazy } from 'react';
 import './App.css'
-import GenerateURL from './pages/GenerateURL';
+import GenerateURL from '@/pages/GenerateURL';
 import Debounce from '@/pages/javascript/Debounce';
 import Throt from '@/pages/javascript/Throt';
-import Login from './pages/Login';
-import Redux from './pages/Redux';
-import Tanstack from './pages/Tanstack';
-import SmartUserList from './pages/SmartUserList';
-import MiniPostman from './pages/MiniPostman';
-import ShoppingCart from './pages/ShoppingCart';
-import Kanban from './pages/Kanban';
-import InfiniteScrolling from './pages/InfiniteScrolling';
+import Login from '@/pages/Login';
+import Redux from '@/pages/Redux';
+import Tanstack from '@/pages/Tanstack';
+import SmartUserList from '@/pages/SmartUserList';
+import MiniPostman from '@/pages/MiniPostman';
+import ShoppingCart from '@/pages/ShoppingCart';
+import Kanban from '@/pages/Kanban';
+import InfiniteScrolling from '@/pages/InfiniteScrolling';
 import Pagination from '@/pages/Pagination';
-import Index from './pages/index';
-// import LazyLoading from './pages/LazyLoading';
+import Hero from './component/Hero';
+// import LazyLoading from '@/pages/LazyLoading';
 import { Link, Route, Routes } from 'react-router-dom';
 
-const LazyLoading = lazy(() => import('./pages/LazyLoading'))
+const LazyLoading = lazy(() => import('@/pages/LazyLoading'))
 function App() {
 
   return (
@@ -26,7 +26,7 @@ function App() {
           <Route path='login' element={<Login />} />
         </Route>
         <Route path='/' element={<Home />} />
-        <Route path='/Index' element={<Index />} />
+        <Route path='/Hero' element={<Hero />} />
         <Route path='/home' element={<Home />} />
         <Route path='/generateURL' element={<GenerateURL />} />
         <Route path='/debounce' element={<Debounce />} />

@@ -1,16 +1,16 @@
 
 const SnippetCard = ({ title, description, icon, snippetCount, variant, delay = 0 }) => {
-  const colorClasses = {
-    javascript: 'text-javascript',
-    react: 'text-react',
-    project: 'text-project',
-  };
+  // const colorClasses = {
+  //   javascript: 'text-javascript',
+  //   react: 'text-react',
+  //   project: 'text-project',
+  // };
 
-  const bgClasses = {
-    javascript: 'bg-javascript/10',
-    react: 'bg-react/10',
-    project: 'bg-project/10',
-  };
+  // const bgClasses = {
+  //   javascript: 'bg-javascript/10',
+  //   react: 'bg-react/10',
+  //   project: 'bg-project/10',
+  // };
 
   return (
     <div
