@@ -13,9 +13,18 @@
 }
 
 .bg-react {
-  background: #22d3ee; /* cyan */
+  background: #22d3ee;
+  /* cyan */
 }
 
 .bg-project {
-  background: #a855f7; /* purple */
+  background: #a855f7;
+  /* purple */
+}
+
+/* dfdfadfadsfadfad fadfadfa  */
+
+.joshi {
+  border: #2b303b;
+  background: linear-gradient(135deg, transparent 0%, transparent 100%)
 }
