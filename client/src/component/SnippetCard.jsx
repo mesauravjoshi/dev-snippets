@@ -1,20 +1,32 @@
-const SnippetCard = ({ title, description, icon, snippetCount, variant, delay = 0 }) => {
-  // const colorClasses = {
-  //   javascript: 'text-javascript',
-  //   react: 'text-react',
-  //   project: 'text-project',
-  // };
+import { useNavigate } from 'react-router-dom';
 
-  // const bgClasses = {
-  //   javascript: 'bg-javascript/10',
-  //   react: 'bg-react/10',
-  //   project: 'bg-project/10',
-  // };
+
+const SnippetCard = ({ title, description, icon, snippetCount, variant, delay = 0, href }) => {
+  const navigate = useNavigate();
+
+  const colorClasses = {
+    javascript: 'text-javascript',
+    react: 'text-react',
+    project: 'text-project',
+  };
+
+  const bgClasses = {
+    javascript: 'bg-javascript/10',
+    react: 'bg-react/10',
+    project: 'bg-project/10',
+  };
+
+  const handleClick = () => {
+    if (href) {
+      navigate(href);
+    }
+  };
 
   return (
     <div
-      className={`snippet-card snippet-card-${variant} group cursor-pointer animate-slide-up border border-[#2b303b] bg-[#14181f] p-6 rounded-2xl`}
+      className={`snippet-card snippet-card-${variant} group cursor-pointer animate-slide-up`}
       style={{ animationDelay: `${delay}ms` }}
+      onClick={handleClick}
     >
       {/* Icon container */}
       <div className={`w-14 h-14 rounded-xl ${bgClasses[variant]} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}>

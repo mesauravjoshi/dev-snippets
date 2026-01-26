@@ -1,4 +1,3 @@
-// import SnippetCard from '@/component/SnippetCard';
 import { JavaScriptIcon, ReactIcon, ProjectIcon } from '@/assets/icons/Icons';
 import { Link } from 'react-router-dom';
 
@@ -21,25 +20,35 @@ const Hero = () => {
       href: '/react',
     },
     {
+      title: 'Node.js',
+      description: 'Backend-focused Node.js snippets for APIs, authentication, databases, and server utilities.',
+      icon: <ProjectIcon />,
+      snippetCount: 120,
+      variant: 'node',
+      href: '/node',
+    },
+    {
       title: 'Projects',
       description: 'Full project templates and boilerplates to kickstart your React Vite application.',
       icon: <ProjectIcon />,
       snippetCount: 50,
       variant: 'project',
       href: '/project',
-    },
+    }
   ];
 
   const colorClasses = {
     javascript: '#facc15',
     react: '#22d3ee',
-    projects: '#a855f7',
+    project: '#a855f7',
+    node: '#22c55e',
   };
 
   const bgClasses = {
     javascript: '#2c2b1c',
     react: '#1c2c35',
-    projects: '#211e32',
+    project: '#211e32',
+    node: '#0f2a1c'
   };
 
   return (
@@ -58,7 +67,7 @@ const Hero = () => {
           <div className="text-center mb-16 lg:mb-24">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse bg-[#7b71b4]" />
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span className="text-sm font-medium text-muted-foreground font-mono">
                 developer snippets
               </span>
@@ -79,10 +88,10 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4 mt-10 animate-slide-up" style={{ animationDelay: '400ms' }}>
-              <button className="px-8 py-3 rounded-lg bg-purple-200 text-[#392748] font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105">
+              <button className="px-8 py-3 rounded-lg bg-foreground text-background font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105">
                 Browse Snippets
               </button>
-              <button className="px-8 py-3 rounded-lg border border-[#344648c0] bg-[#1c2627] text-foreground font-semibold hover:bg-secondary transition-all duration-300 hover:scale-105 font-mono ">
+              <button className="px-8 py-3 rounded-lg border border-border bg-secondary/50 text-foreground font-semibold hover:bg-secondary transition-all duration-300 hover:scale-105 font-mono">
                 {"</"} View Docs
               </button>
             </div>
@@ -103,12 +112,17 @@ const Hero = () => {
               >
                 <Link to={category.href}>
                   {/* Icon container */}
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 bg-[${bgClasses[category.title.toLowerCase()]}]`}>
-                    <span className={`text-[${colorClasses[category.title.toLowerCase()]}]`}>{category.icon}</span>
+                  <div
+                    className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}
+                    style={{ backgroundColor: bgClasses[category.variant] }}
+                  >
+                    <span style={{ color: colorClasses[category.variant] }}>{category.icon}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className={`text-xl font-semibold mb-2 transition-colors duration-300 text-[${colorClasses[category.title.toLowerCase()]}]`}>
+                  <h3 className={`text-xl font-semibold mb-2 transition-colors duration-300`}
+                    style={{ color: colorClasses[category.variant] }}
+                  >
                     {category.title}
                   </h3>
 
@@ -119,7 +133,9 @@ const Hero = () => {
 
                   {/* Snippet count */}
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <div className={`w-2 h-2 rounded-full bg-[${colorClasses[category.title.toLowerCase()]}]`} />
+                    <div className={`w-2 h-2 rounded-full`}
+                      style={{ backgroundColor: colorClasses[category.variant] }}
+                    />
                     <span className="font-mono">{category.snippetCount}+ snippets</span>
                   </div>
 

@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { JavaScriptIcon } from '@/assets/icons/Icons';
+import { ReactIcon } from '@/assets/icons/Icons';
+import { Outlet } from 'react-router-dom';
 
 const snippetsData = [
   { id: 'infiniteScrolling', name: 'InfiniteScrolling', route: 'infiniteScrolling' },
@@ -10,6 +11,14 @@ const snippetsData = [
 ];
 
 const ReactSnippets = () => {
+  return (
+    <Outlet />
+  );
+};
+
+export default ReactSnippets;
+
+export const ReactList = () => {
   const navigate = useNavigate();
 
   return (
@@ -28,14 +37,14 @@ const ReactSnippets = () => {
           </button>
 
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl flex items-center bg-[#2c2b1c] justify-center">
-              <span className="text-[#facc15] ">
-                <JavaScriptIcon />
+            <div className="w-12 h-12 rounded-xl flex items-center bg-[#1c2c35] justify-center">
+              <span className="text-[#22d3ee] ">
+                <ReactIcon />
               </span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-foreground">JavaScript Snippets</h1>
-              <p className="text-muted-foreground text-sm">Essential vanilla JS snippets for modern development</p>
+              <h1 className="text-2xl font-bold text-foreground">React Snippets</h1>
+              <p className="text-muted-foreground text-sm">Essential React snippets for modern development</p>
             </div>
           </div>
         </div>
@@ -61,7 +70,7 @@ const ReactSnippets = () => {
                 >
                   <td className="px-6 py-4 text-sm text-muted-foreground font-mono">{index + 1}</td>
                   <td className="px-6 py-4">
-                    <span className="text-sm font-medium text-[#facc15]">{snippet.name}</span>
+                    <span className="text-sm font-medium text-[#22d3ee]">{snippet.name}</span>
                   </td>
                   {/* <td className="px-6 py-4 text-sm text-muted-foreground max-w-md">
                     {snippet.description}
@@ -85,7 +94,5 @@ const ReactSnippets = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export default ReactSnippets;
+  )
+}
