@@ -50,7 +50,7 @@ function InfiniteScroll() {
           onScroll={handleScroll}
           className="
             max-h-[60vh]
-            sm:max-h-[500px]
+            
             overflow-y-auto
             px-4
             py-4

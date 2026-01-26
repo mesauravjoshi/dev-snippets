@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, removeTodo, fetchTodos } from '../feature/addTodo/AddTodo';
+import { addTodo, removeTodo, fetchTodos } from '../../feature/addTodo/AddTodo';
 import { useEffect } from 'react';
 
 function generateRandomId(length = 10) {

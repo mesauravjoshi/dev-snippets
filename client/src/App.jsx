@@ -4,19 +4,21 @@ import GenerateURL from '@/pages/GenerateURL';
 import Debounce from '@/pages/javascript/Debounce';
 import Throt from '@/pages/javascript/Throt';
 import Login from '@/pages/Login';
-import Redux from '@/pages/Redux';
+import Redux from '@/pages/react/Redux';
 import Tanstack from '@/pages/Tanstack';
 import SmartUserList from '@/pages/SmartUserList';
 import MiniPostman from '@/pages/MiniPostman';
 import ShoppingCart from '@/pages/ShoppingCart';
 import Kanban from '@/pages/Kanban';
-import InfiniteScrolling from '@/pages/InfiniteScrolling';
-import Pagination from '@/pages/Pagination';
-import Hero from './component/Hero';
+import InfiniteScrolling from '@/pages/react/InfiniteScrolling';
+import Pagination from '@/pages/react/Pagination';
+import Javascript, { JavaScriptList } from '@/pages/JavaScriptSnippets';
+import React from '@/pages/ReactSnippets';
+import Hero from '@/component/Hero';
 // import LazyLoading from '@/pages/LazyLoading';
 import { Link, Route, Routes } from 'react-router-dom';
 
-const LazyLoading = lazy(() => import('@/pages/LazyLoading'))
+const LazyLoading = lazy(() => import('@/pages/react/LazyLoading'))
 function App() {
 
   return (
@@ -25,21 +27,33 @@ function App() {
         <Route path='auth'>
           <Route path='login' element={<Login />} />
         </Route>
-        <Route path='/' element={<Home />} />
-        <Route path='/Hero' element={<Hero />} />
+        <Route path='/' element={<Hero />} />
+        {/* <Route path='/javascript'  /> */}
+        {/* <Route path='/Hero' element={<Hero />} /> */}
         <Route path='/home' element={<Home />} />
+
+        {/* Javascript */}
+        <Route path="javascript" element={<Javascript />}>
+          <Route index element={<JavaScriptList />} />
+          <Route path="debounce" element={<Debounce />} />
+          <Route path="throt" element={<Throt />} />
+        </Route>
+
+
+        {/* React  */}
+        <Route path='react' element={<React />} >
+          <Route path='redux' element={<Redux />} />
+          <Route path='laxyloading' element={<LazyLoading />} />
+          <Route path='infiniteScrolling' element={<InfiniteScrolling />} />
+          <Route path='pagination' element={<Pagination />} />
+        </Route>
+
         <Route path='/generateURL' element={<GenerateURL />} />
-        <Route path='/debounce' element={<Debounce />} />
-        <Route path='/redux' element={<Redux />} />
-        <Route path='/throt' element={<Throt />} />
         <Route path='/tanstack' element={<Tanstack />} />
-        <Route path='/laxyloading' element={<LazyLoading />} />
         <Route path='/smartUserList' element={<SmartUserList />} />
         <Route path='/miniPostman' element={<MiniPostman />} />
         <Route path='/shopping-cart' element={<ShoppingCart />} />
         <Route path='/kanban' element={<Kanban />} />
-        <Route path='/infiniteScrolling' element={<InfiniteScrolling />} />
-        <Route path='/pagination' element={<Pagination />} />
       </Routes>
     </>
   )

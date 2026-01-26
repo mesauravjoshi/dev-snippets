@@ -1,4 +1,3 @@
-
 const SnippetCard = ({ title, description, icon, snippetCount, variant, delay = 0 }) => {
   // const colorClasses = {
   //   javascript: 'text-javascript',

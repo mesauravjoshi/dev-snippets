@@ -22,9 +22,9 @@
   /* purple */
 }
 
-/* dfdfadfadsfadfad fadfadfa  */
-
-.joshi {
-  border: #2b303b;
-  background: linear-gradient(135deg, transparent 0%, transparent 100%)
+.text-gradient {
+  background: linear-gradient(272deg, #22d3ee 0%, #a855f7 50%, #facc15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
