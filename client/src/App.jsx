@@ -5,6 +5,7 @@ import Debounce from '@/pages/javascript/Debounce';
 import Throt from '@/pages/javascript/Throt';
 import Login from '@/pages/Login';
 import Redux from '@/pages/react/Redux';
+import LazyLoading from '@/pages/react/LazyLoading';
 import Tanstack from '@/pages/Tanstack';
 import SmartUserList from '@/pages/SmartUserList';
 import MiniPostman from '@/pages/MiniPostman';
@@ -17,7 +18,7 @@ import React, { ReactList } from '@/pages/ReactSnippets';
 import Hero from '@/component/Hero';
 import { Link, Route, Routes } from 'react-router-dom';
 
-const LazyLoading = lazy(() => import('@/pages/react/LazyLoading'))
+const LazyLoadingComponent = lazy(() => import('@/pages/react/LazyLoadingComponent'))
 function App() {
 
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route index element={<ReactList />} />
           <Route path='redux' element={<Redux />} />
           <Route path='laxyloading' element={<LazyLoading />} />
+          <Route path='lazyLoadingComponent' element={<LazyLoadingComponent />} />
           <Route path='infiniteScrolling' element={<InfiniteScrolling />} />
           <Route path='pagination' element={<Pagination />} />
           <Route path='tanstack' element={<Tanstack />} />
@@ -75,14 +77,6 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className='text-3xl'>
-        <p className='text-2xl'>
-          <Link to={'/laxyloading'}>
-            Laxy load
-          </Link>
-        </p>
-      </h1>
-
       <div className="min-h-screen p-8">
         <div className="max-w-6xl mx-auto">
 
