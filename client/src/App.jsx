@@ -15,6 +15,7 @@ import InfiniteScrolling from '@/pages/react/InfiniteScrolling';
 import Pagination from '@/pages/react/Pagination';
 import Javascript, { JavaScriptList } from '@/pages/JavaScriptSnippets';
 import React, { ReactList } from '@/pages/ReactSnippets';
+import NodeJSSnippet, { NodeJSList } from '@/pages/NodeJSSnippet';
 import Hero from '@/component/Hero';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -46,6 +47,17 @@ function App() {
           <Route path='infiniteScrolling' element={<InfiniteScrolling />} />
           <Route path='pagination' element={<Pagination />} />
           <Route path='tanstack' element={<Tanstack />} />
+        </Route>
+
+        {/* Node  */}
+        <Route path='node' element={<NodeJSSnippet />} >
+          <Route index element={<NodeJSList />} />
+          {/* <Route path='redux' element={<Redux />} />
+          <Route path='laxyloading' element={<LazyLoading />} />
+          <Route path='lazyLoadingComponent' element={<LazyLoadingComponent />} />
+          <Route path='infiniteScrolling' element={<InfiniteScrolling />} />
+          <Route path='pagination' element={<Pagination />} />
+          <Route path='tanstack' element={<Tanstack />} /> */}
         </Route>
 
         <Route path='/generateURL' element={<GenerateURL />} />

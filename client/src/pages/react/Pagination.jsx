@@ -24,8 +24,8 @@ const Pagination = () => {
   // console.log(totaPages - 1);
   // console.log('skip', skip);
   // console.log('limit', limit);
-  console.log('totaPages', totaPages);
-  console.log('current page', pageNumber);
+  // console.log('totaPages', totaPages);
+  // console.log('current page', pageNumber);
 
   useEffect(() => {
     fetchData(skip);

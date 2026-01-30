@@ -19,4 +19,15 @@ const ProjectIcon = () => (
   </svg>
 );
 
-export { JavaScriptIcon, ReactIcon, ProjectIcon };
+const NodeJsIcon = () => (
+  <svg viewBox="0 0 256 256" className="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M128 16 L224 72 V184 L128 240 L32 184 V72 Z" fill="currentColor"
+    />
+    <text x="128" y="155" textAnchor="middle" fontSize="92" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" fill="#000000">
+      JS
+    </text>
+  </svg>
+);
+
+
+export { JavaScriptIcon, ReactIcon, ProjectIcon, NodeJsIcon };
