@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const url = `mongodb://localhost:27017/url_shortner`;
+const url = `mongodb://localhost:27017/dev-snippets`;
 
 async function connectDatabase() {
     try {
