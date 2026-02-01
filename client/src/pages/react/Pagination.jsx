@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 const limit = 10
-const totaPages = 8
+const totaPages = 20
 const Pagination = () => {
   // const Pagination = ({limit, totaPages}) => {
   const [data, setData] = useState([]);
