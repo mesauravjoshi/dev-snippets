@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 const snippetsData = [
   { id: 'debounce', name: 'Debounce', route: 'debounce' },
   { id: 'throt', name: 'Throtling', route: 'throt' },
+  { id: 'EventDelegation', name: 'EventDelegation', route: 'eventdelegation' },
 ];
 
 const JavaScriptSnippets = () => {

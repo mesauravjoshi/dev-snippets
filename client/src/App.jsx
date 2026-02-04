@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import './App.css'
 import GenerateURL from '@/pages/GenerateURL';
 import Debounce from '@/pages/javascript/Debounce';
+import EventDelegation from '@/pages/javascript/EventDelegation';
 import Throt from '@/pages/javascript/Throt';
 import Login from '@/pages/Login';
 import Redux from '@/pages/react/Redux';
@@ -36,6 +37,7 @@ function App() {
           <Route index element={<JavaScriptList />} />
           <Route path="debounce" element={<Debounce />} />
           <Route path="throt" element={<Throt />} />
+          <Route path="eventDelegation" element={<EventDelegation />} />
         </Route>
 
         {/* React  */}
