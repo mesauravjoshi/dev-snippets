@@ -34,6 +34,14 @@ const Hero = () => {
       snippetCount: 50,
       variant: 'project',
       href: '/project',
+    },
+    {
+      title: 'Typescript',
+      description: 'Typescript.',
+      icon: <ProjectIcon />,
+      snippetCount: 50,
+      variant: 'typescript',
+      href: '/project',
     }
   ];
 
@@ -42,13 +50,15 @@ const Hero = () => {
     react: '#22d3ee',
     project: '#a855f7',
     node: '#22c55e',
+    typescript: '#3178c6',
   };
 
   const bgClasses = {
     javascript: '#2c2b1c',
     react: '#1c2c35',
     project: '#211e32',
-    node: '#0f2a1c'
+    node: '#0f2a1c',
+    typescript: '#0f1d2c'
   };
 
   return (

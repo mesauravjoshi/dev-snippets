@@ -7,7 +7,6 @@ const EventDelegation = () => {
         <h2 className="text-xl font-semibold text-[#F5E8D8] mb-4 text-center">
           Event Delegation
         </h2>
-
       </div>
     </div>
   );

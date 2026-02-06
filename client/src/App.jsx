@@ -1,24 +1,26 @@
 import { lazy } from 'react';
 import './App.css'
 import GenerateURL from '@/pages/GenerateURL';
-import Debounce from '@/pages/javascript/Debounce';
-import EventDelegation from '@/pages/javascript/EventDelegation';
-import Throt from '@/pages/javascript/Throt';
+import { Link, Route, Routes } from 'react-router-dom';
+import Javascript, { JavaScriptList } from '@/pages/JavaScriptSnippets';
+import React, { ReactList } from '@/pages/ReactSnippets';
+import NodeJSSnippet, { NodeJSList } from '@/pages/NodeJSSnippet';
+import Hero from '@/component/Hero';
+// JS nested pages 
+import { Debounce, Throt, EventDelegation } from '@/pages/javascript';
+// react nested pages 
+import {
+  Redux,
+  LazyLoading,
+  InfiniteScrolling,
+  Pagination,
+} from '@/pages/react';
 import Login from '@/pages/Login';
-import Redux from '@/pages/react/Redux';
-import LazyLoading from '@/pages/react/LazyLoading';
 import Tanstack from '@/pages/Tanstack';
 import SmartUserList from '@/pages/SmartUserList';
 import MiniPostman from '@/pages/MiniPostman';
 import ShoppingCart from '@/pages/ShoppingCart';
 import Kanban from '@/pages/Kanban';
-import InfiniteScrolling from '@/pages/react/InfiniteScrolling';
-import Pagination from '@/pages/react/Pagination';
-import Javascript, { JavaScriptList } from '@/pages/JavaScriptSnippets';
-import React, { ReactList } from '@/pages/ReactSnippets';
-import NodeJSSnippet, { NodeJSList } from '@/pages/NodeJSSnippet';
-import Hero from '@/component/Hero';
-import { Link, Route, Routes } from 'react-router-dom';
 
 const LazyLoadingComponent = lazy(() => import('@/pages/react/LazyLoadingComponent'))
 function App() {
@@ -37,7 +39,7 @@ function App() {
           <Route index element={<JavaScriptList />} />
           <Route path="debounce" element={<Debounce />} />
           <Route path="throt" element={<Throt />} />
-          <Route path="eventDelegation" element={<EventDelegation />} />
+          <Route path="eventdelegation" element={<EventDelegation />} />
         </Route>
 
         {/* React  */}
