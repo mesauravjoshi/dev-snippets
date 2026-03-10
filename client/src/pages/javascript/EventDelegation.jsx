@@ -22,6 +22,8 @@ const EventDelegation = () => {
     // CAN PERFORM ANY ACTION HERE USING USER ID 
   }
 
+  https://www.youtube.com/watch?v=Q75Ea6Geoqs
+
   return (
     <div className="min-h-screen bg-[#1C1C1C] flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-[#1C1C1C] border border-[#2A2A2A] rounded-xl shadow-lg">
@@ -30,7 +32,7 @@ const EventDelegation = () => {
         </h2>
 
         <div className="px-4 py-4" >
-          <ul className="space-y-3" onClick={handleClick} onHover={handleMouseDown}>
+          <ul className="space-y-3" onClick={handleClick} >
             {users.map((user) => (
               <li
                 data-action="print" data-id={user.id}

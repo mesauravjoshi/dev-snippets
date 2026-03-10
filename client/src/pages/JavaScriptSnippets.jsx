@@ -1,12 +1,26 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { JavaScriptIcon } from '@/assets/icons/Icons';
+import ViewCodeModal from '@/component/Modal/ViewCodeModal';
 import { Outlet } from 'react-router-dom';
+
+// FOR RAW DATA 
+import Debounce from '@/pages/javascript/Debounce.jsx?raw';
+import Throt from '@/pages/javascript/Throt.jsx?raw';
+import EventDelegation from '@/pages/javascript/EventDelegation.jsx?raw';
+
+import { useState } from 'react'
 
 const snippetsData = [
   { id: 'debounce', name: 'Debounce', route: 'debounce' },
   { id: 'throt', name: 'Throtling', route: 'throt' },
   { id: 'EventDelegation', name: 'EventDelegation', route: 'eventdelegation' },
 ];
+
+const codeMap = {
+  debounce: Debounce,
+  throt: Throt,
+  EventDelegation: EventDelegation,
+};
 
 const JavaScriptSnippets = () => {
   return (
@@ -18,6 +32,16 @@ export default JavaScriptSnippets;
 
 export const JavaScriptList = () => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const [selctedCode, setSelctedCode] = useState('');
+  const [codeBLockTitle, setCodeBLockTitle] = useState('');
+
+  const handleVewCode = (snippetId, snippetName) => {
+    const code = codeMap[snippetId];
+    setSelctedCode(code);
+    setCodeBLockTitle(snippetName)
+    setOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -73,17 +97,29 @@ export const JavaScriptList = () => {
                   {/* <td className="px-6 py-4 text-sm text-muted-foreground max-w-md">
                     {snippet.description}
                   </td> */}
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 flex gap-2">
                     <Link className="px-4 py-2 rounded-lg text-sm font-medium bg-secondary hover:bg-secondary/80 text-foreground transition-colors"
                       to={snippet.route}>
                       View
                     </Link>
+                    <p className="px-4 py-2 rounded-lg text-sm font-medium bg-secondary hover:bg-secondary/80 text-foreground transition-colors cursor-pointer"
+                      onClick={() => handleVewCode(snippet.id, snippet.name)}
+                    >
+                      Code
+                    </p>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        <ViewCodeModal
+          open={open}
+          setOpen={setOpen}
+          code={selctedCode}
+          title={codeBLockTitle}
+        />
 
         {/* Stats */}
         <div className="mt-6 flex items-center justify-between text-sm text-muted-foreground">

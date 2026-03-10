@@ -1,4 +1,4 @@
-import Table from '../component/Table';
+import Table from '../component/ui/Table';
 
 const Tanstack = () => {
 
