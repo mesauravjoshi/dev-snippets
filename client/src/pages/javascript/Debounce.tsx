@@ -4,13 +4,13 @@ import useDebounce from '@/hook/useDebounce';
 const Debounce = () => {
   const [input, setInput] = useState("");
 
-  const callApi = (e) => {
+  const callApi = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log("Calling api query", e.target.value);
   };
 
   const debouncedCallApi = useDebounce(callApi, 500);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
     debouncedCallApi(e);
   };

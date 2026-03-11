@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const CodeBlock = ({ code, language = "javascript", title }) => {
+const CodeBlock = ({ code, title }: {
+  code: string,
+  // language: string,
+  title: string
+}) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -20,7 +24,7 @@ const CodeBlock = ({ code, language = "javascript", title }) => {
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-2 bg-[#020617] border-b border-gray-700">
         <span className="text-sm text-gray-300 font-semibold">
-          {title || language}
+          {title}
         </span>
 
         <button

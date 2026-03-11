@@ -9,7 +9,7 @@ import Throt from '@/pages/javascript/Throt.jsx?raw';
 import EventDelegation from '@/pages/javascript/EventDelegation.jsx?raw';
 import { useState } from 'react'
 
-const snippetsData = [
+const snippetsData: { id: CodeMapKey; name: string; route: string }[] = [
   { id: 'debounce', name: 'Debounce', route: 'debounce' },
   { id: 'throt', name: 'Throtling', route: 'throt' },
   { id: 'EventDelegation', name: 'EventDelegation', route: 'eventdelegation' },
@@ -20,6 +20,8 @@ const codeMap = {
   throt: Throt,
   EventDelegation: EventDelegation,
 };
+
+type CodeMapKey = "debounce" | "throt" | "EventDelegation"
 
 const JavaScriptSnippets = () => {
   return (
@@ -35,10 +37,10 @@ export const JavaScriptList = () => {
   const [selctedCode, setSelctedCode] = useState('');
   const [codeBLockTitle, setCodeBLockTitle] = useState('');
 
-  const handleVewCode = (snippetId, snippetName) => {
+  const handleVewCode = (snippetId: CodeMapKey, snippetName: string) => {
     const code = codeMap[snippetId];
     setSelctedCode(code);
-    setCodeBLockTitle(snippetName)
+    setCodeBLockTitle(snippetName);
     setOpen(true);
   };
 

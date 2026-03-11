@@ -1,8 +1,14 @@
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 // import { CheckIcon } from '@heroicons/react/24/outline'
 import CodeBlock from "@/component/ui/CodeBlock";
+import React from 'react';
 
-const ViewCodeModal = ({ open, setOpen, code, title }) => {
+const ViewCodeModal = ({ open, setOpen, code, title }: {
+  open: boolean,
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  code: string,
+  title: string
+}) => {
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -20,7 +26,6 @@ const ViewCodeModal = ({ open, setOpen, code, title }) => {
             <div className="mt-2 h-[60vh] overflow-auto">
               <CodeBlock
                 code={code}
-                language="jsx"
                 title={title}
               />
             </div>

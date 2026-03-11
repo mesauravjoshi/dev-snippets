@@ -14,13 +14,13 @@ const Throt = () => {
     };
   };
 
-  const callApi = (e) => {
+  const callApi = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('Calling api query', e.target.value);
   };
 
   const throtCallApi = useMemo(() => throtling(callApi, 2000), []);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
     throtCallApi(e);
   };
