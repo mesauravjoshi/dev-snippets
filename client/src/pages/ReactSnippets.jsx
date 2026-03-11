@@ -1,6 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { ReactIcon } from '@/assets/icons/Icons';
 import { Outlet } from 'react-router-dom';
+import { useState } from 'react'
+import ViewCodeModal from '@/component/Modal/ViewCodeModal';
+// FOR RAW DATA 
+import InfiniteScrolling from '@/pages/react/InfiniteScrolling.jsx?raw';
+import Redux from '@/pages/react/Redux.jsx?raw';
+import Tanstack from '@/pages/Tanstack.jsx?raw';
+import Pagination from '@/pages/react/Pagination.jsx?raw';
+import LazyLoading from '@/pages/react/LazyLoading.jsx?raw';
 
 const snippetsData = [
   { id: 'infiniteScrolling', name: 'InfiniteScrolling', route: 'infiniteScrolling' },
@@ -9,6 +17,15 @@ const snippetsData = [
   { id: 'Pagination', name: 'Pagination', route: 'pagination' },
   { id: 'laxyloading', name: 'Laxy loading', route: 'laxyloading' },
 ];
+
+const codeMap = {
+  infiniteScrolling: InfiniteScrolling,
+  redux: Redux,
+  tanstack: Tanstack,
+  Pagination: Pagination,
+  laxyloading: LazyLoading,
+};
+
 
 const ReactSnippets = () => {
   return (
@@ -20,6 +37,17 @@ export default ReactSnippets;
 
 export const ReactList = () => {
   const navigate = useNavigate();
+
+  const [open, setOpen] = useState(false);
+  const [selctedCode, setSelctedCode] = useState('');
+  const [codeBLockTitle, setCodeBLockTitle] = useState('');
+
+  const handleVewCode = (snippetId, snippetName) => {
+    const code = codeMap[snippetId];
+    setSelctedCode(code);
+    setCodeBLockTitle(snippetName)
+    setOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -75,17 +103,29 @@ export const ReactList = () => {
                   {/* <td className="px-6 py-4 text-sm text-muted-foreground max-w-md">
                     {snippet.description}
                   </td> */}
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 flex gap-2">
                     <Link className="px-4 py-2 rounded-lg text-sm font-medium bg-secondary hover:bg-secondary/80 text-foreground transition-colors"
                       to={snippet.route}>
                       View
                     </Link>
+                    <p className="px-4 py-2 rounded-lg text-sm font-medium bg-secondary hover:bg-secondary/80 text-foreground transition-colors cursor-pointer"
+                      onClick={() => handleVewCode(snippet.id, snippet.name)}
+                    >
+                      Code
+                    </p>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        <ViewCodeModal
+          open={open}
+          setOpen={setOpen}
+          code={selctedCode}
+          title={codeBLockTitle}
+        />
 
         {/* Stats */}
         <div className="mt-6 flex items-center justify-between text-sm text-muted-foreground">

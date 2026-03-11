@@ -7,7 +7,6 @@ import { Outlet } from 'react-router-dom';
 import Debounce from '@/pages/javascript/Debounce.jsx?raw';
 import Throt from '@/pages/javascript/Throt.jsx?raw';
 import EventDelegation from '@/pages/javascript/EventDelegation.jsx?raw';
-
 import { useState } from 'react'
 
 const snippetsData = [
